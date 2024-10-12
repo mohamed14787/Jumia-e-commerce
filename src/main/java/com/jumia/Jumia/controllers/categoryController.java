@@ -9,6 +9,7 @@ import com.jumia.Jumia.repositries.categoryRepositry;
 import com.jumia.Jumia.services.categoryService;
 import com.jumia.models.category;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class categoryController {
 
     private categoryService categoryService;
