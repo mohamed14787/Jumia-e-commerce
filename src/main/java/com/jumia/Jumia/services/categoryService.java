@@ -2,7 +2,8 @@ package com.jumia.Jumia.services;
 
 import java.util.List;
 
-import com.jumia.models.category;
+import com.jumia.Jumia.models.category;
+import com.jumia.Jumia.repositries.categoryRepositry;
 
 public interface categoryService {
         

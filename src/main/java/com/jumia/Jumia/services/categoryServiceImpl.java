@@ -4,47 +4,44 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
-import com.jumia.models.category;
+import com.jumia.Jumia.models.category;
+import com.jumia.Jumia.repositries.categoryRepositry;
 @Service
-public class categoryServiceImpl implements categoryService {
+@CrossOrigin(origins = "http://localhost:3000")
 
-    private List<category> categories = new ArrayList<>();
+public class categoryServiceImpl implements categoryService {
+    private categoryRepositry categoryRepositry;
+
+    public categoryServiceImpl(categoryRepositry categoryRepositry) {
+        this.categoryRepositry = categoryRepositry;
+    }
+
     
     @Override
-    public List<category> getCategories() {
-        return this.categories;
+    public List<category> getCategories( ) {
+        return categoryRepositry.findAll();
     }
 
     @Override
     public void addCategory(category category) {
-        this.categories.add(category);
+        categoryRepositry.save(category);
     }
 
     @Override
-    public void deleteCategory(int id) {
-       
-        for (category c : categories) {
-            if (c.getCategoryId() == id) {
-                categories.remove(c);
-                break;
-            }
-        }
-
-
+    public void deleteCategory( int id ) {
+        categoryRepositry.deleteById(id+"");
         
+  
     }
 
     @Override
-    public void updateCategory(category category) {
-        for (category c : categories) {
-            if (c.getCategoryId() == category.getCategoryId()) {
-                categories.remove(c);
-                categories.add(category);
-                break;
-            }
-        }
-    }
+public void updateCategory(category category) {
+    if (categoryRepositry.existsById(category.getName())) {
+        categoryRepositry.save(category);  // Save if the category exists
     
+}
+}
 
 }
