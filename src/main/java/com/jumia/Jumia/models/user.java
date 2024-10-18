@@ -14,6 +14,11 @@ public class user {
     private Role role;
     @Id
     private String userId;
+    private enum Role {
+        ADMIN, USER
+    }
+
+    private cart cart;
     
     
     public user(String name, String email, String password, String phoneNumber, String address, Role role, String userId) {
@@ -25,6 +30,7 @@ public class user {
         this.role = role;
    
         this.userId = userId;
+        this.cart = new cart(userId);
     }
 
 
@@ -82,6 +88,14 @@ public class user {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public cart getCart() {
+        return this.cart;
+    }
+
+    public void setCart(cart cart) {
+        this.cart = cart;
     }
 
 

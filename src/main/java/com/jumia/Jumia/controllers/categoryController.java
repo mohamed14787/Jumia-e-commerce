@@ -46,7 +46,7 @@ public class categoryController {
     }
 
     @PutMapping("/api/admin/categories")
-    public String putMethodName( @RequestBody category c) {
+    public String updateCategory( @RequestBody category c) {
         //TODO: process PUT request
         categoryService.updateCategory(c);
         return "category updated";
