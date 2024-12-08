@@ -16,6 +16,8 @@ public interface categoryService {
         public void deleteCategory(int id);
 
         public void updateCategory(category category);
+
+        public category getCategory(String id);
         
        
 

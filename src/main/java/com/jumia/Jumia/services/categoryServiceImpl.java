@@ -44,4 +44,8 @@ public void updateCategory(category category) {
 }
 }
 
+@Override
+public category getCategory(String id) {
+    return categoryRepositry.findById(id).get();
+}
 }

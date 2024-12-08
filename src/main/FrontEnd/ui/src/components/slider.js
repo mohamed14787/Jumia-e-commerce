@@ -1,4 +1,8 @@
 import { Carousel } from "flowbite-react";
+import ItemCard from "./itemCard";
+import carousal1 from "../Assets/carousel 1.jpeg";
+import carousal2 from "../Assets/carousel 2.jpeg";
+import carousal3 from "/Users/mohamedelshaarawy/Desktop/Jumia e-commerce/src/main/FrontEnd/ui/src/Assets/Carousal 3.png";
 function Slider() {
   return (
     <div
@@ -13,18 +17,9 @@ function Slider() {
         style={{ height: "60vh" }}
       >
         <Carousel slideInterval={5000}>
-          <img
-            src="https://flowbite.com/docs/images/carousel/carousel-1.svg"
-            alt="..."
-          />
-          <img
-            src="https://flowbite.com/docs/images/carousel/carousel-2.svg"
-            alt="..."
-          />
-          <img
-            src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
-            alt="..."
-          />
+          <img src={carousal1} alt="..." />
+          <img src={carousal2} alt="..." />
+          <img src={carousal3} alt="..." />
           <img
             src="https://flowbite.com/docs/images/carousel/carousel-4.svg"
             alt="..."

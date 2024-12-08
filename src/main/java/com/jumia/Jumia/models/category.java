@@ -6,12 +6,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "categories")
 public class category {
     
-    @Id
+    
     private String name;
     private String description;
-    private int categoryId;
+    @Id
+    private String categoryId;
 
-    public category(String name, String description, int categoryId) {
+    public category(String name, String description, String categoryId) {
         this.name = name;
         this.description = description;
         this.categoryId = categoryId;
@@ -35,11 +36,11 @@ public class category {
         this.description = description;
     }
 
-    public int getCategoryId() {
+    public String getCategoryId() {
         return this.categoryId;
     }
 
-    public void setCategoryId(int categoryId) {
+    public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
     }
 

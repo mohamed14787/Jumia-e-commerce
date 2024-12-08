@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  outline: 1px solid red;
+}
+.focus\:ring-cyan-300:focus {
+  --tw-ring-opacity: 0 !important;
 }
 
 .App-logo {

@@ -11,17 +11,15 @@ public class user {
     private String password;
     private String phoneNumber;
     private String address;
-    private Role role;
+    private String role;
     @Id
     private String userId;
-    private enum Role {
-        ADMIN, USER
-    }
+    
 
     private cart cart;
     
     
-    public user(String name, String email, String password, String phoneNumber, String address, Role role, String userId) {
+    public user(String name, String email, String password, String phoneNumber, String address, String role, String userId) {
         this.name = name;
         this.email = email;
         this.password = password;
@@ -74,12 +72,12 @@ public class user {
         this.address = address;
     }
 
-    public Role getRole() {
+    public String getRole() {
         return this.role;
     }
 
     public void setRole(String role) {
-        this.role = Role.valueOf(role);
+        this.role = String.valueOf(role);
     }
 
     public String getUserId() {
